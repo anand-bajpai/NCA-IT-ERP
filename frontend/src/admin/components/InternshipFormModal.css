@@ -1,0 +1,14 @@
+/* Field labels, form-status banners, form-grid, inputs and submit button
+   for every *-form now live in admin/styles/form-shared.css so all admin
+   forms match. This file only holds the internship-form-specific layout. */
+
+.internship-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.internship-form-checkboxes {
+  display: flex;
+  gap: 24px;
+}

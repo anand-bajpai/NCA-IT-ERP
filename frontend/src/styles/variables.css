@@ -1,0 +1,53 @@
+:root{
+
+--primary:#0F6EFF;
+--secondary:#111827;
+
+--text:#4B5563;
+
+--heading:#111827;
+
+--white:#ffffff;
+
+--light:#F8FAFC;
+
+--border:#E5E7EB;
+
+--shadow:0 10px 30px rgba(0,0,0,.08);
+
+--radius:12px;
+
+--transition:.3s ease;
+
+--container:1200px;
+
+/* Spacing scale (added for consistent gaps/padding across the app) */
+--space-1:4px;
+--space-2:8px;
+--space-3:12px;
+--space-4:16px;
+--space-5:20px;
+--space-6:24px;
+--space-7:32px;
+--space-8:40px;
+
+/* Admin dashboard tokens (kept separate so the public-site palette above is untouched) */
+--admin-bg:#f1f5f9;
+--admin-surface:#ffffff;
+--admin-border:#e2e8f0;
+--admin-border-soft:#f1f5f9;
+--admin-text:#334155;
+--admin-text-muted:#64748b;
+--admin-text-faint:#94a3b8;
+--admin-heading:#0f172a;
+--admin-primary:#2563eb;
+--admin-primary-dark:#1d4ed8;
+--admin-primary-shadow:rgba(37, 99, 235, 0.28);
+--admin-danger:#dc2626;
+--admin-radius-sm:8px;
+--admin-radius:10px;
+--admin-radius-lg:14px;
+--admin-shadow-sm:0 1px 2px rgba(15, 23, 42, 0.04);
+--admin-shadow:0 3px 12px rgba(15, 23, 42, 0.05);
+
+}

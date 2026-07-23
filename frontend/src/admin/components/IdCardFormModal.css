@@ -1,0 +1,357 @@
+/* Field labels, form-status banners, base form-grid, inputs and submit
+   button for every *-form now live in admin/styles/form-shared.css so all
+   admin forms match. This file only holds ID-card-form-specific layout
+   (fieldset sections, photo preview, student picker, admission lookup). */
+
+.idcard-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.idcard-form-heading h3 {
+  margin: 0 0 4px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--admin-heading);
+  letter-spacing: -0.01em;
+}
+
+.idcard-form-heading p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--admin-text-muted);
+}
+
+.idcard-form-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.idcard-form-section {
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius);
+  padding: 16px 16px 14px;
+  margin: 0;
+}
+
+.idcard-form-section legend {
+  padding: 0 8px;
+  margin-left: 2px;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--admin-primary);
+}
+
+.idcard-form-grid .span-2 {
+  grid-column: 1 / -1;
+}
+
+.idcard-form input::placeholder {
+  color: var(--admin-text-faint);
+}
+
+.idcard-form input:focus,
+.idcard-form select:focus {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* --- Photo preview --- */
+.idcard-photo-preview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.idcard-photo-preview img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #eef2ff;
+}
+
+.idcard-photo-preview span {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* --- Student picker --- */
+.idcard-student-locked,
+.idcard-student-picked {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #dbeafe;
+  background: #eff6ff;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.idcard-student-locked svg {
+  color: #2563eb;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.idcard-student-locked strong,
+.idcard-student-picked-text strong {
+  display: block;
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.idcard-student-locked span,
+.idcard-student-picked-text span {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.idcard-student-picked img,
+.idcard-student-result img,
+.idcard-student-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: #dbeafe;
+}
+
+.idcard-student-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  font-size: 14px;
+}
+
+.idcard-student-picked-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.idcard-change-btn {
+  border: 1px solid #bfdbfe;
+  background: #fff;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 7px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.idcard-change-btn:hover {
+  background: #eff6ff;
+}
+
+/* --- Admission Number fetch (primary flow) --- */
+.idcard-fetch-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  padding: 6px 6px 6px 14px;
+  background: #fff;
+}
+
+.idcard-fetch-box svg {
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
+.idcard-fetch-box input {
+  border: none;
+  padding: 6px 0;
+  box-shadow: none !important;
+}
+
+.idcard-fetch-box button {
+  flex-shrink: 0;
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 9px 16px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.idcard-fetch-box button:hover:not(:disabled) {
+  opacity: 0.92;
+}
+
+.idcard-fetch-box button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.idcard-fetch-error {
+  margin-top: 10px;
+}
+
+.idcard-browse-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: none;
+  color: #2563eb;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px 2px 0;
+}
+
+.idcard-browse-toggle:hover {
+  text-decoration: underline;
+}
+
+.idcard-fetched {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.idcard-fetched-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 12px;
+  padding: 2px 2px 0;
+}
+
+.idcard-fetched-grid .span-2 {
+  grid-column: 1 / -1;
+}
+
+.idcard-fetched-grid b {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #94a3b8;
+  margin-bottom: 2px;
+}
+
+.idcard-fetched-grid span {
+  font-size: 13px;
+  color: #0f172a;
+  word-break: break-word;
+}
+
+.idcard-student-search {
+  position: relative;
+  margin-top: 10px;
+}
+
+.idcard-search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  padding: 10px 14px;
+  background: #fff;
+}
+
+.idcard-search-box svg {
+  color: #94a3b8;
+  flex-shrink: 0;
+}
+
+.idcard-search-box input {
+  border: none;
+  padding: 0;
+  box-shadow: none !important;
+}
+
+.idcard-student-results {
+  margin-top: 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  max-height: 220px;
+  overflow-y: auto;
+  background: #fff;
+}
+
+.idcard-student-results-status {
+  margin: 0;
+  padding: 14px;
+  font-size: 13px;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.idcard-student-result {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border: none;
+  background: none;
+  padding: 10px 12px;
+  cursor: pointer;
+  text-align: left;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.idcard-student-result:last-child {
+  border-bottom: none;
+}
+
+.idcard-student-result:hover {
+  background: #f8fafc;
+}
+
+.idcard-student-result-text {
+  min-width: 0;
+}
+
+.idcard-student-result-text strong {
+  display: block;
+  font-size: 13.5px;
+  color: #0f172a;
+}
+
+.idcard-student-result-text span {
+  font-size: 12px;
+  color: #64748b;
+}
+
+@media (max-width: 560px) {
+  .idcard-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .idcard-form-grid .span-2 {
+    grid-column: auto;
+  }
+
+  .idcard-fetched-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .idcard-fetched-grid .span-2 {
+    grid-column: auto;
+  }
+
+  .idcard-fetch-box {
+    flex-wrap: wrap;
+  }
+
+  .idcard-fetch-box input {
+    width: 100%;
+  }
+
+  .idcard-fetch-box button {
+    width: 100%;
+  }
+}

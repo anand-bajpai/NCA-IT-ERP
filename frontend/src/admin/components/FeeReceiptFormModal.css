@@ -1,0 +1,143 @@
+/* Field labels, form-status banners, base form-grid, inputs and submit
+   button for every *-form now live in admin/styles/form-shared.css so all
+   admin forms match. This file only holds receipt-form-specific layout. */
+
+.receipt-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.admission-lookup-field {
+  grid-column: span 2;
+}
+
+.admission-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admission-input-row input {
+  flex: 1;
+}
+
+.admission-input-row input:read-only,
+.receipt-form input:read-only {
+  background: #f8fafc;
+  color: #475569;
+  cursor: not-allowed;
+}
+
+.lookup-clear-btn {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--admin-border);
+  background: #fff;
+  border-radius: 9px;
+  color: var(--admin-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.lookup-clear-btn:hover {
+  background: #fef2f2;
+  color: #b91c1c;
+  border-color: #fecaca;
+}
+
+.lookup-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.lookup-status.loading {
+  color: #475569;
+  background: #f1f5f9;
+}
+
+.lookup-status.found {
+  color: #047857;
+  background: #ecfdf5;
+}
+
+.lookup-status.not-found {
+  color: #b45309;
+  background: #fffbeb;
+}
+
+.lookup-status .spin {
+  animation: lookup-spin 0.8s linear infinite;
+}
+
+@keyframes lookup-spin {
+  to { transform: rotate(360deg); }
+}
+
+.lookup-hint {
+  margin: -6px 0 0;
+  font-size: 12px;
+  color: var(--admin-text-faint);
+}
+
+.balance-preview {
+  background: #fef2f2;
+  color: #b91c1c;
+  padding: 10px 14px;
+  border-radius: 9px;
+  font-size: 14px;
+}
+
+.receipt-form-section-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--admin-primary);
+  margin-top: 4px;
+  margin-bottom: -4px;
+}
+
+.calc-summary {
+  background: #f8fafc;
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius);
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13.5px;
+}
+
+.calc-summary div {
+  display: flex;
+  justify-content: space-between;
+  color: var(--admin-text);
+}
+
+.calc-summary .grand {
+  border-top: 1px dashed #cbd5e1;
+  padding-top: 6px;
+  font-size: 15px;
+  color: var(--admin-heading);
+}
+
+.calc-summary .balance strong {
+  color: #b91c1c;
+}
+
+/* --- Responsive: mobile --- */
+@media (max-width: 560px) {
+  .admission-lookup-field {
+    grid-column: span 1;
+  }
+}

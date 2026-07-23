@@ -1,0 +1,118 @@
+.enquiry-view-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.enquiry-view-panel h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #0f172a;
+}
+
+.view-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 20px;
+}
+
+.view-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.view-field-label {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.view-field-value {
+  font-size: 14.5px;
+  color: #1e293b;
+  word-break: break-word;
+}
+
+.view-message {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 14px;
+}
+
+.view-message-text {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #334155;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+.view-status-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.view-status-badge.status-new { background: #dbeafe; color: #1d4ed8; }
+.view-status-badge.status-contacted { background: #fef9c3; color: #a16207; }
+.view-status-badge.status-follow-up { background: #ffedd5; color: #c2410c; }
+.view-status-badge.status-converted { background: #dcfce7; color: #15803d; }
+.view-status-badge.status-closed { background: #f1f5f9; color: #64748b; }
+
+.view-converted-note {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #15803d;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 500;
+}
+
+.view-followups {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 14px;
+}
+
+.view-followups .followup-empty {
+  color: #94a3b8;
+  font-size: 13.5px;
+  text-align: center;
+  padding: 12px 0;
+  margin: 0;
+}
+
+.view-followups .followup-item {
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.view-followups .followup-note {
+  margin: 0 0 6px;
+  font-size: 14px;
+  color: #334155;
+}
+
+.view-followups .followup-meta {
+  display: flex;
+  gap: 14px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.view-followups .followup-next {
+  color: #b45309;
+  font-weight: 600;
+}

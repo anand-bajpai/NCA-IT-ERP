@@ -1,0 +1,623 @@
+/* =========================================================================
+   Admin shared UI — page chrome, tables, action menus, pagination, badges
+   -------------------------------------------------------------------------
+   These classes are used by many admin pages. They used to be copy-pasted
+   into every page's own CSS file with small, drifting differences — since
+   all page CSS ends up in one bundle, whichever copy loaded last silently
+   won on every page, which is why things looked inconsistent. Everything
+   generic now lives here, once. Page CSS files only keep page-specific
+   classes (the ones prefixed with that page's name).
+   ========================================================================= */
+
+/* --- Page header --------------------------------------------------------- */
+.admin-page-header,
+[class^="admin-"][class$="-header"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.admin-page-header h1,
+[class^="admin-"][class$="-header"] h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--admin-heading);
+  margin: 0 0 4px;
+  letter-spacing: -0.01em;
+}
+
+.admin-dashboard-sub {
+  margin: 0;
+  color: var(--admin-text-muted);
+  font-size: 13.5px;
+}
+
+/* --- Primary / icon buttons ---------------------------------------------- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  border: none;
+  background: linear-gradient(135deg, var(--admin-primary), var(--admin-primary-dark));
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: var(--admin-radius);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px var(--admin-primary-shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.35);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Legacy button classnames used across pages now route to the same look */
+.add-student-btn,
+.add-client-btn,
+.add-certificate-btn,
+.add-idcard-btn,
+.add-internship-btn,
+.add-enquiry-btn,
+.add-user-btn,
+.add-receipt-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  border: none;
+  background: linear-gradient(135deg, var(--admin-primary), var(--admin-primary-dark));
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: var(--admin-radius);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px var(--admin-primary-shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+
+.add-student-btn:hover,
+.add-client-btn:hover,
+.add-certificate-btn:hover,
+.add-idcard-btn:hover,
+.add-internship-btn:hover,
+.add-enquiry-btn:hover,
+.add-user-btn:hover,
+.add-receipt-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.35);
+}
+
+/* --- Filters / toolbar ---------------------------------------------------- */
+.students-filters,
+.clients-filters,
+.certificates-filters,
+.idcards-filters,
+.internships-filters,
+.enquiries-filters,
+.users-filters,
+.receipts-filters {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+  flex-wrap: wrap;
+  background: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius-lg);
+  padding: var(--space-3);
+  box-shadow: var(--admin-shadow-sm);
+}
+
+.search-box {
+  flex: 1;
+  min-width: 240px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: #f8fafc;
+  border: 1px solid transparent;
+  border-radius: var(--admin-radius);
+  padding: 10px 14px;
+  color: var(--admin-text-faint);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.search-box:focus-within {
+  border-color: var(--admin-primary);
+  background: #fff;
+}
+
+.search-box svg {
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+  color: var(--admin-heading);
+  background: transparent;
+}
+
+.students-filters select,
+.clients-filters select,
+.certificates-filters select,
+.idcards-filters select,
+.internships-filters select,
+.enquiries-filters select,
+.users-filters select,
+.receipts-filters select {
+  padding: 10px 14px;
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius);
+  font-size: 13.5px;
+  background: #f8fafc;
+  color: var(--admin-text);
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.students-filters select:hover,
+.students-filters select:focus,
+.clients-filters select:hover,
+.clients-filters select:focus,
+.certificates-filters select:hover,
+.certificates-filters select:focus,
+.idcards-filters select:hover,
+.idcards-filters select:focus,
+.internships-filters select:hover,
+.internships-filters select:focus,
+.enquiries-filters select:hover,
+.enquiries-filters select:focus,
+.users-filters select:hover,
+.users-filters select:focus,
+.receipts-filters select:hover,
+.receipts-filters select:focus {
+  border-color: var(--admin-primary);
+  background: #fff;
+  outline: none;
+}
+
+/* --- Table shell (every *-table-wrap / *-table share this shape) --------- */
+[class$="-table-wrap"] {
+  background: var(--admin-surface);
+  border-radius: var(--admin-radius-lg);
+  overflow-x: auto;
+  border: 1px solid var(--admin-border);
+  box-shadow: var(--admin-shadow);
+}
+
+[class$="-table-wrap"] table,
+table[class$="-table"] {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+[class$="-table-wrap"] th,
+table[class$="-table"] th {
+  text-align: left;
+  padding: 14px var(--space-4);
+  background: #f8fafc;
+  color: var(--admin-text-muted);
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--admin-border);
+  white-space: nowrap;
+}
+
+[class$="-table-wrap"] th.col-actions,
+table[class$="-table"] th.col-actions {
+  text-align: center;
+}
+
+[class$="-table-wrap"] tbody tr,
+table[class$="-table"] tbody tr {
+  transition: background 0.12s ease;
+}
+
+[class$="-table-wrap"] tbody tr:hover,
+table[class$="-table"] tbody tr:hover {
+  background: #f8fafc;
+}
+
+[class$="-table-wrap"] td,
+table[class$="-table"] td {
+  padding: 12px var(--space-4);
+  border-top: 1px solid var(--admin-border-soft);
+  font-size: 13.5px;
+  color: var(--admin-text);
+  vertical-align: middle;
+}
+
+.table-empty {
+  text-align: center;
+  padding: var(--space-8) !important;
+  color: var(--admin-text-faint);
+}
+
+/* --- Status badges ---------------------------------------------------------
+   Base look is shared; each page only needs to add its own color modifier
+   (all listed here so the same status word always renders the same color) */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 11px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.status-badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.status-active,
+.status-valid,
+.status-ongoing { background: #ecfdf5; color: #047857; }
+
+.status-completed,
+.status-converted { background: #eff6ff; color: #1d4ed8; }
+
+.status-dropped,
+.status-blocked,
+.status-revoked,
+.status-inactive { background: #fef2f2; color: #b91c1c; }
+
+.status-on-hold,
+.status-expired,
+.status-contacted,
+.status-pending { background: #fffbeb; color: #b45309; }
+
+.status-reissued { background: #eff6ff; color: #1d4ed8; }
+
+.status-closed { background: #f1f5f9; color: #64748b; }
+
+/* --- Row action buttons (inline icon actions) ----------------------------- */
+.table-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.table-actions button {
+  border: 1px solid transparent;
+  background: #f1f5f9;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: var(--admin-radius-sm);
+  cursor: pointer;
+  color: var(--admin-text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+.table-actions button:hover:not(:disabled) {
+  background: #e2e8f0;
+  color: var(--admin-heading);
+  transform: translateY(-1px);
+}
+
+.table-actions button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.table-actions button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.table-actions button.danger {
+  color: var(--admin-danger);
+}
+
+.table-actions button.convert {
+  color: #047857;
+}
+
+/* --- Row "..." dropdown menu ----------------------------------------------- */
+.row-menu {
+  position: relative;
+  display: inline-flex;
+}
+
+.row-icon-btn {
+  border: 1px solid transparent;
+  background: #f1f5f9;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--admin-radius-sm);
+  cursor: pointer;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  flex-shrink: 0;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+.row-icon-btn:hover:not(:disabled) {
+  background: #e2e8f0;
+  color: var(--admin-heading);
+  transform: translateY(-1px);
+}
+
+.row-icon-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.row-icon-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.row-menu-trigger.row-icon-btn {
+  background: transparent;
+}
+
+.row-menu-trigger[aria-expanded="true"] {
+  background: #e2e8f0;
+  color: var(--admin-heading);
+}
+
+.row-menu-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 40;
+  min-width: 190px;
+  background: #fff;
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.16);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  animation: row-menu-in 0.12s ease;
+}
+
+/* Portal-rendered variant (see RowMenuPortal.jsx): positioned via inline
+   top/bottom/right in fixed coordinates, so it must not inherit the
+   `position: absolute` above (which was relative to the table row and
+   got clipped by the scrollable table wrapper). */
+.row-menu-dropdown--portal {
+  position: fixed;
+  z-index: 2000;
+  max-height: min(70vh, 420px);
+  overflow-y: auto;
+}
+
+@keyframes row-menu-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.row-menu-dropdown button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--admin-text);
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 9px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.row-menu-dropdown button svg {
+  flex-shrink: 0;
+  font-size: 13px;
+  color: var(--admin-text-muted);
+}
+
+.row-menu-dropdown button:hover:not(:disabled) {
+  background: #f1f5f9;
+  color: var(--admin-heading);
+}
+
+.row-menu-dropdown button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.row-menu-dropdown button.danger {
+  color: var(--admin-danger);
+}
+
+.row-menu-dropdown button.danger svg {
+  color: var(--admin-danger);
+}
+
+.row-menu-dropdown button.danger:hover:not(:disabled) {
+  background: #fef2f2;
+}
+
+.row-menu-divider {
+  height: 1px;
+  background: var(--admin-border-soft);
+  margin: 4px 2px;
+}
+
+/* --- Pagination ------------------------------------------------------------ */
+.pagination {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--admin-radius-sm);
+  border: 1px solid var(--admin-border);
+  background: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--admin-text);
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.pagination button:hover:not(:disabled):not(.active) {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.pagination button.active {
+  background: var(--admin-primary);
+  color: #fff;
+  border-color: var(--admin-primary);
+}
+
+.pagination button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* --- Responsive ------------------------------------------------------------ */
+@media (max-width: 900px) {
+  .students-filters,
+  .clients-filters,
+  .certificates-filters,
+  .idcards-filters,
+  .internships-filters,
+  .enquiries-filters,
+  .users-filters,
+  .receipts-filters {
+    gap: 10px;
+  }
+
+  .students-filters select,
+  .clients-filters select,
+  .certificates-filters select,
+  .idcards-filters select,
+  .internships-filters select,
+  .enquiries-filters select,
+  .users-filters select,
+  .receipts-filters select {
+    flex: 1 1 45%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .admin-page-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-3);
+  }
+
+  .admin-page-header h1 {
+    font-size: 21px;
+  }
+
+  .btn-primary,
+  .add-student-btn,
+  .add-client-btn,
+  .add-certificate-btn,
+  .add-idcard-btn,
+  .add-internship-btn,
+  .add-enquiry-btn,
+  .add-user-btn,
+  .add-receipt-btn {
+    justify-content: center;
+  }
+
+  .students-filters,
+  .clients-filters,
+  .certificates-filters,
+  .idcards-filters,
+  .internships-filters,
+  .enquiries-filters,
+  .users-filters,
+  .receipts-filters {
+    flex-direction: column;
+  }
+
+  .students-filters .search-box,
+  .students-filters select,
+  .clients-filters .search-box,
+  .clients-filters select,
+  .certificates-filters .search-box,
+  .certificates-filters select,
+  .idcards-filters .search-box,
+  .idcards-filters select,
+  .internships-filters .search-box,
+  .internships-filters select,
+  .enquiries-filters .search-box,
+  .enquiries-filters select,
+  .users-filters .search-box,
+  .users-filters select,
+  .receipts-filters .search-box,
+  .receipts-filters select {
+    width: 100%;
+    flex: none;
+  }
+
+  [class$="-table-wrap"] th,
+  [class$="-table-wrap"] td,
+  table[class$="-table"] th,
+  table[class$="-table"] td {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .table-actions button,
+  .row-icon-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .row-menu-dropdown {
+    right: -8px;
+    min-width: 180px;
+  }
+
+  .pagination button {
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -1,0 +1,121 @@
+/* ================= TOP BAR (Desktop Only) ================= */
+
+.topbar {
+  width: 100%;
+  background: #3a3d42;
+  color: #f1f1f1;
+  font-size: 13.5px;
+}
+
+.topbar-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 8px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.topbar-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #e5e7eb;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.topbar-icon {
+  color: #f2b705;
+  flex-shrink: 0;
+}
+
+.topbar-divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.topbar-btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: 0.25s ease;
+}
+
+.topbar-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.topbar-btn-outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.topbar-phone {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #f2b705;
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.topbar-phone:hover {
+  color: #ffd747;
+}
+
+.topbar-socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topbar-socials a {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  transition: 0.25s ease;
+}
+
+.topbar-socials a:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* Desktop only, as requested — hidden on tablet & mobile */
+@media (max-width: 1300px) {
+  .topbar {
+    display: none;
+  }
+}

@@ -1,0 +1,43 @@
+/* Page-specific rules only — shared page header, filters, table, action
+   buttons and pagination now live in admin/styles/admin-shared.css so every
+   admin list page stays consistent. */
+
+.enquiry-message-cell {
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status-select {
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.status-select.status-new { background: #eff6ff; color: #1d4ed8; }
+.status-select.status-contacted { background: #fffbeb; color: #b45309; }
+.status-select.status-follow-up { background: #fef3c7; color: #92400e; }
+.status-select.status-converted { background: #ecfdf5; color: #047857; }
+.status-select.status-closed { background: #f1f5f9; color: #64748b; }
+
+.status-select:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.converted-note {
+  margin-top: 6px;
+  font-size: 11.5px;
+  color: #047857;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .enquiry-message-cell {
+    max-width: 180px;
+  }
+}

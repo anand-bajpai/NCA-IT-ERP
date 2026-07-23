@@ -1,0 +1,47 @@
+/* Field labels, form-status banners, base form-grid and inputs for every
+   *-form now live in admin/styles/form-shared.css. This file only holds
+   convert-form-specific layout (two-button action row). */
+
+.convert-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.convert-hint {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--admin-text-muted);
+}
+
+.convert-form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.convert-form-actions button {
+  border: none;
+  background: var(--admin-primary);
+  color: #fff;
+  padding: 13px;
+  border-radius: var(--admin-radius);
+  font-weight: 600;
+  cursor: pointer;
+  flex: 1;
+}
+
+.convert-form-actions button.secondary {
+  background: #f1f5f9;
+  color: var(--admin-text);
+}
+
+.convert-form-actions button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+@media (max-width: 560px) {
+  .convert-form-actions {
+    flex-direction: column;
+  }
+}

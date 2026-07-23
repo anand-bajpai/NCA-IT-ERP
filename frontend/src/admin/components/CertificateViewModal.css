@@ -1,0 +1,118 @@
+.certificate-view {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 320px;
+}
+
+.certificate-view-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.certificate-view-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+  margin-bottom: 3px;
+}
+
+.certificate-view-header h3 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+  color: #0f172a;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+}
+
+.certificate-view-body {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.certificate-view-details {
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.certificate-view-group h4 {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #2563eb;
+}
+
+.certificate-view-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 13.5px;
+}
+
+.certificate-view-group:last-child .certificate-view-row:last-child {
+  border-bottom: none;
+}
+
+.certificate-view-label {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.certificate-view-value {
+  color: #0f172a;
+  font-weight: 600;
+  text-align: right;
+}
+
+.certificate-view-qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  align-self: flex-start;
+}
+
+.certificate-view-qr img {
+  width: 160px;
+  height: 160px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #fff;
+  padding: 6px;
+}
+
+.certificate-view-qr p {
+  margin: 0;
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+@media (max-width: 560px) {
+  .certificate-view-body {
+    flex-direction: column;
+  }
+
+  .certificate-view-qr {
+    align-self: stretch;
+  }
+}

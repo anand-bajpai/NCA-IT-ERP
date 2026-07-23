@@ -1,0 +1,30 @@
+{
+  "name": "nca-it-solution-backend",
+  "version": "1.0.0",
+  "description": "Backend API for NCA IT Solution website - handles contact enquiries and internship applications, sending them by email.",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "create-admin": "node src/scripts/createAdmin.js",
+    "seed-courses": "node src/scripts/seedCourses.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-rate-limit": "^7.4.1",
+    "express-validator": "^7.2.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.16",
+    "pdfkit": "^0.19.1",
+    "puppeteer": "^23.9.0",
+    "qrcode": "^1.5.4"
+  }
+}

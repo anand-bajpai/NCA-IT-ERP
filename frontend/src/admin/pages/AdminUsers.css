@@ -1,0 +1,177 @@
+/* Page-specific rules only — shared page header, table, status badges,
+   action buttons now live in admin/styles/admin-shared.css. This page also
+   has its own compact search bar and a small inline add/reset-password
+   modal that aren't reused elsewhere. */
+
+.users-search {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius);
+  padding: 8px 14px;
+  margin-bottom: var(--space-4);
+  max-width: 480px;
+  transition: border-color 0.15s ease;
+}
+
+.users-search:focus-within {
+  border-color: var(--admin-primary);
+}
+
+.users-search-icon {
+  color: var(--admin-text-faint);
+}
+
+.users-search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  padding: 6px 0;
+  background: transparent;
+}
+
+.users-search button {
+  border: none;
+  background: var(--admin-primary);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: var(--admin-radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.users-search-clear {
+  background: #f1f5f9 !important;
+  color: var(--admin-text) !important;
+}
+
+.users-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+  font-size: 13px;
+  color: var(--admin-text-muted);
+}
+
+.users-pagination button {
+  border: 1px solid var(--admin-border);
+  background: #fff;
+  padding: 8px 16px;
+  border-radius: var(--admin-radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--admin-text);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.users-pagination button:hover:not(:disabled) {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.users-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.superadmin-icon {
+  color: #b45309;
+  margin-right: 4px;
+}
+
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #eef2ff;
+  color: #4338ca;
+}
+
+.role-superadmin { background: #fffbeb; color: #b45309; }
+.role-admin { background: #eff6ff; color: #1d4ed8; }
+.role-reception { background: #ecfdf5; color: #047857; }
+.role-hr { background: #fdf4ff; color: #a21caf; }
+.role-faculty { background: #f0f9ff; color: #0369a1; }
+.role-accounts { background: #fef2f2; color: #b91c1c; }
+
+/* Inline add-user / reset-password modal (separate from the shared Modal
+   component, kept as-is since it's only used on this page) */
+.user-form-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.user-form {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+.user-form h2 {
+  margin: 0 0 4px;
+  font-size: 20px;
+  color: var(--admin-heading);
+}
+
+.user-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.user-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.user-form-actions button {
+  padding: 10px 18px;
+  border-radius: var(--admin-radius-sm);
+  border: 1px solid var(--admin-border);
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.user-form-actions button.primary {
+  background: var(--admin-primary);
+  color: #fff;
+  border-color: var(--admin-primary);
+}
+
+@media (max-width: 640px) {
+  .users-search {
+    max-width: none;
+  }
+
+  .users-pagination {
+    gap: var(--space-3);
+    font-size: 12.5px;
+  }
+}

@@ -1,0 +1,45 @@
+.internship-cta{
+    padding:80px 20px;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color:white;
+}
+
+.cta-container{
+    max-width:1400px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.cta-btn{
+    display: inline-block;
+    padding:18px 40px;
+    border:none;
+    border-radius:12px;
+    background:white;
+    color:#2563eb;
+    font-weight:700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.cta-btn:hover{
+    transform: translateY(-3px);
+}
+
+@media(max-width:768px){
+    .cta-container{
+        flex-direction:column;
+        gap:30px;
+        text-align:center;
+    }
+}

@@ -1,0 +1,38 @@
+.benefits{
+    padding:100px 20px;
+    background:white;
+}
+
+.benefits-container{
+    max-width:1400px;
+    margin:auto;
+    text-align:center;
+}
+
+.benefits-grid{
+    margin-top:60px;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.benefit-card{
+    padding:40px 20px;
+    border-radius:20px;
+    background:#f8fafc;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+    font-weight:600;
+}
+
+@media(max-width:992px){
+    .benefits-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:768px){
+    .benefits-grid{
+        grid-template-columns:1fr;
+    }
+}

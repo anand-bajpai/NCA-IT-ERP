@@ -1,0 +1,54 @@
+.course-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.course-form-heading h3 {
+  margin: 0 0 4px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--admin-heading);
+  letter-spacing: -0.01em;
+}
+
+.course-form-heading p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--admin-text-muted);
+}
+
+.course-form-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.course-form-grid .span-2 {
+  grid-column: 1 / -1;
+}
+
+.course-form input::placeholder,
+.course-form textarea::placeholder {
+  color: var(--admin-text-faint);
+}
+
+.course-image-preview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.course-image-preview img {
+  width: 90px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #eef2ff;
+}
+
+.course-form input[readonly] {
+  background: #f3f4f6;
+  color: #6b7280;
+  cursor: not-allowed;
+}

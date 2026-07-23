@@ -1,0 +1,197 @@
+.footer {
+    position: relative;
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #1e3a8a,
+        #2563eb
+    );
+
+    padding-top: 80px;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: auto;
+
+    padding: 0 20px 60px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+    gap: 40px;
+}
+
+.footer-column h3 {
+    margin-bottom: 25px;
+    font-size: 22px;
+}
+
+.footer-description {
+    line-height: 1.8;
+    color: #dbeafe;
+    margin: 20px 0;
+}
+
+.footer-logo {
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.footer-column a {
+    display: block;
+    color: #dbeafe;
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: .3s;
+}
+
+.footer-column a:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.trust-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.trust-badges span {
+    color: #dbeafe;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.footer-social a {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-size: 18px;
+}
+
+.footer-social a:hover {
+    background: white;
+    color: #2563eb;
+}
+
+.footer-contact p {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.mini-map {
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.mini-map iframe {
+    width: 100%;
+    height: 180px;
+    border: none;
+}
+
+.legal-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 25px 20px;
+    border-top: 1px solid rgba(255,255,255,.15);
+}
+
+.legal-links a {
+    color: #dbeafe;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 25px 20px;
+
+    border-top: 1px solid rgba(255,255,255,.15);
+
+    max-width: 1400px;
+    margin: auto;
+}
+
+.scroll-top {
+    position: fixed;
+    right: 30px;
+    bottom: 100px; /* sits directly above the floating WhatsApp button, same right offset, no overlap */
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #2563eb;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    font-size: 18px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.25);
+    z-index: 1400;
+}
+
+.scroll-top:hover {
+    transform: translateY(-5px);
+}
+
+@media (max-width: 480px) {
+    .scroll-top {
+        right: 18px;
+        bottom: 164px;
+        width: 42px;
+        height: 42px;
+        font-size: 16px;
+    }
+}
+
+@media(max-width:1200px){
+    .footer-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:768px){
+    .footer-container{
+        grid-template-columns:1fr;
+    }
+
+    .footer-bottom{
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .legal-links{
+        flex-wrap: wrap;
+    }
+}

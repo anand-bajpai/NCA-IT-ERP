@@ -1,0 +1,335 @@
+/* =========================
+   GLOBAL
+========================= */
+
+.portfolio-page {
+  width: 100%;
+  overflow-x: hidden;
+  background: #f8fafc;
+}
+
+.portfolio-page section {
+  padding: 120px 8%;
+}
+
+/* =========================
+   COMMON SECTION LAYOUT
+========================= */
+
+.section-content,
+.section-image {
+  flex: 1;
+}
+
+.section-image img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+
+.success-section,
+.solution-section,
+.initiative-section,
+.capability-section,
+.why-section,
+.technology-section {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.solution-section,
+.capability-section,
+.technology-section {
+  flex-direction: row;
+}
+
+.success-section,
+.initiative-section,
+.why-section {
+  flex-direction: row-reverse;
+}
+
+.section-content h2,
+.industry-section h2 {
+  font-size: 56px;
+  line-height: 1.2;
+  margin-bottom: 40px;
+  color: #0f172a;
+}
+
+.section-content p {
+  font-size: 20px;
+  color: #64748b;
+  line-height: 1.8;
+}
+
+/* =========================
+   HERO SHOWCASE
+========================= */
+
+.hero-showcase {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  background: linear-gradient(135deg,#f3ecff,#eef4ff);
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-image {
+  flex: 1;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 30px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.15);
+}
+
+.section-tag {
+  display: inline-block;
+  color: #2563eb;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+}
+
+.hero-content h1 {
+  font-size: 78px;
+  line-height: 1.05;
+  color: #0f172a;
+  margin-bottom: 30px;
+}
+
+.hero-content p {
+  font-size: 24px;
+  line-height: 1.8;
+  color: #64748b;
+  margin-bottom: 40px;
+}
+
+.industry-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.industry-buttons button {
+  border: none;
+  background: white;
+  padding: 18px 30px;
+  border-radius: 14px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s;
+  box-shadow: 0 5px 20px rgba(0,0,0,.08);
+}
+
+.industry-buttons button:hover {
+  background: #2563eb;
+  color: white;
+  transform: translateY(-5px);
+}
+
+/* =========================
+   SUCCESS STORIES
+========================= */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 25px;
+}
+
+.stat-card {
+  background: white;
+  padding: 35px;
+  border-radius: 22px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,.07);
+  transition: .3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+}
+
+.stat-card h3 {
+  font-size: 48px;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.stat-card p {
+  color: #64748b;
+  font-size: 18px;
+}
+
+/* =========================
+   INDUSTRIES
+========================= */
+
+.industry-section {
+  text-align: center;
+}
+
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 35px;
+}
+
+.industry-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,.08);
+  transition: .4s;
+}
+
+.industry-card:hover {
+  transform: translateY(-12px);
+}
+
+.industry-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.industry-card h3 {
+  padding: 25px;
+  font-size: 26px;
+}
+
+/* =========================
+   SOLUTIONS
+========================= */
+
+.solution-grid,
+.capability-grid,
+.reason-grid,
+.technology-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 20px;
+}
+
+.solution-card,
+.capability-card,
+.reason-card,
+.technology-card {
+  background: white;
+  padding: 28px;
+  border-radius: 18px;
+  font-size: 20px;
+  font-weight: 600;
+  box-shadow: 0 8px 25px rgba(0,0,0,.06);
+  transition: .3s;
+}
+
+.solution-card:hover,
+.capability-card:hover,
+.reason-card:hover,
+.technology-card:hover {
+  background: #2563eb;
+  color: white;
+  transform: translateY(-8px);
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.timeline-item {
+  flex: 1;
+  min-width: 220px;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 10px 35px rgba(0,0,0,.07);
+  transition: .3s;
+}
+
+.timeline-item:hover {
+  background: #2563eb;
+  color: white;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1200px){
+
+  .hero-showcase,
+  .success-section,
+  .solution-section,
+  .initiative-section,
+  .capability-section,
+  .why-section,
+  .technology-section{
+    flex-direction: column;
+  }
+
+  .hero-content h1{
+    font-size:60px;
+  }
+
+  .section-content h2,
+  .industry-section h2{
+    font-size:46px;
+  }
+
+  .industry-grid{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media(max-width:768px){
+
+  .portfolio-page section{
+    padding:80px 20px;
+  }
+
+  .hero-content h1{
+    font-size:42px;
+  }
+
+  .hero-content p{
+    font-size:18px;
+  }
+
+  .section-content h2,
+  .industry-section h2{
+    font-size:34px;
+  }
+
+  .stats-grid,
+  .industry-grid,
+  .solution-grid,
+  .capability-grid,
+  .reason-grid,
+  .technology-grid{
+    grid-template-columns:1fr;
+  }
+
+  .section-image img{
+    height:320px;
+  }
+}

@@ -1,0 +1,64 @@
+/* Field labels, form-status banners, inputs and submit button for every
+   *-form now live in admin/styles/form-shared.css. This file only holds
+   the follow-up timeline layout specific to this panel. */
+
+.followup-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.followup-panel h3 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--admin-heading);
+}
+
+.followup-history {
+  max-height: 240px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 4px;
+}
+
+.followup-empty {
+  color: var(--admin-text-faint);
+  font-size: 13.5px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.followup-item {
+  background: #f8fafc;
+  border: 1px solid var(--admin-border-soft);
+  border-radius: var(--admin-radius);
+  padding: 12px 14px;
+}
+
+.followup-note {
+  margin: 0 0 6px;
+  font-size: 14px;
+  color: var(--admin-text);
+}
+
+.followup-meta {
+  display: flex;
+  gap: 14px;
+  font-size: 12px;
+  color: var(--admin-text-faint);
+}
+
+.followup-next {
+  color: #b45309;
+  font-weight: 600;
+}
+
+.followup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid var(--admin-border-soft);
+  padding-top: 14px;
+}

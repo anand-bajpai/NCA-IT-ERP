@@ -1,0 +1,227 @@
+.admin-enrollments h1 {
+  font-size: 24px;
+  color: #0f172a;
+  margin: 0 0 4px;
+}
+
+.admin-enrollments-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.add-course-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  padding: 11px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 13.5px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+
+.add-course-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.32);
+}
+
+.admin-enrollments .section-heading {
+  font-size: 16px;
+  color: #0f172a;
+  margin: 28px 0 14px;
+}
+
+/* Top stat cards — same visual language as the Dashboard's stat cards */
+.enrollment-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  max-width: 640px;
+}
+
+/* Course list */
+.enrollment-course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.enrollment-course-card {
+  position: relative;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.enrollment-course-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.14);
+}
+
+.enrollment-course-card-body {
+  display: block;
+  width: 100%;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+
+.enrollment-course-card-actions {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  display: flex;
+  gap: 6px;
+}
+
+.course-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.65);
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.15s ease;
+}
+
+.course-action-btn:hover {
+  background: #2563eb;
+}
+
+.course-action-btn.danger:hover {
+  background: #dc2626;
+}
+
+.enrollment-course-img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  display: block;
+  background: #f1f5f9;
+}
+
+.enrollment-course-img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 26px;
+}
+
+.enrollment-course-body {
+  padding: 14px 16px 16px;
+}
+
+.enrollment-course-body h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  color: #0f172a;
+}
+
+.enrollment-course-meta {
+  margin: 0 0 10px;
+  font-size: 12.5px;
+  color: #64748b;
+}
+
+.enrollment-course-count {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Course detail view */
+.enrollment-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: #f1f5f9;
+  color: #334155;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 13.5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.enrollment-back-btn:hover {
+  background: #e2e8f0;
+}
+
+.enrollment-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.enrollment-detail-img {
+  width: 76px;
+  height: 76px;
+  border-radius: 14px;
+  object-fit: cover;
+  background: #f1f5f9;
+  flex-shrink: 0;
+}
+
+.enrollment-detail-header h1 {
+  margin: 0 0 4px;
+}
+
+/* --- Responsive: tablet & mobile --- */
+@media (max-width: 640px) {
+  .admin-enrollments-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .add-course-btn {
+    justify-content: center;
+  }
+
+  .enrollment-stats-grid {
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
+
+  .enrollment-course-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .enrollment-detail-header {
+    gap: 12px;
+  }
+
+  .enrollment-detail-img {
+    width: 56px;
+    height: 56px;
+  }
+}

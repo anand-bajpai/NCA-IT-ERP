@@ -1,0 +1,101 @@
+.apply-form{
+    padding:100px 20px;
+    background:#f8fafc;
+}
+
+.apply-container{
+    max-width:1400px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 2fr;
+    gap:50px;
+}
+
+.internship-form{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.internship-form input,
+.internship-form select,
+.internship-form textarea{
+    padding:16px;
+    border:1px solid #e2e8f0;
+    border-radius:12px;
+}
+
+.internship-form textarea{
+    grid-column:span 3;
+}
+
+.internship-form button{
+    grid-column:span 3;
+    padding:18px;
+    border:none;
+    border-radius:12px;
+    background:#2563eb;
+    color:white;
+}
+
+@media(max-width:992px){
+
+    .apply-container{
+        grid-template-columns:1fr;
+    }
+
+    .internship-form{
+        grid-template-columns:1fr;
+    }
+
+    .internship-form textarea,
+    .internship-form button{
+        grid-column:span 1;
+    }
+}
+/* ================= FILE INPUT LABEL ================= */
+
+.file-label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+    color: #475569;
+    font-weight: 500;
+}
+
+.file-label input[type="file"] {
+    padding: 10px;
+    border: 1px dashed #cbd5e1;
+    border-radius: 10px;
+    background: #f8fafc;
+    cursor: pointer;
+}
+
+/* ================= FORM STATUS ================= */
+
+.form-status {
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 6px;
+}
+
+.form-status.success {
+    background: #ecfdf5;
+    color: #047857;
+    border: 1px solid #a7f3d0;
+}
+
+.form-status.error {
+    background: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+.internship-form button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}

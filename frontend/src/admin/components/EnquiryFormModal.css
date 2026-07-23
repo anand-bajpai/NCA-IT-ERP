@@ -1,0 +1,9 @@
+/* Field labels, form-status banners, form-grid, inputs and submit button
+   for every *-form now live in admin/styles/form-shared.css so all admin
+   forms match. This file only holds the enquiry-form-specific layout. */
+
+.enquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}

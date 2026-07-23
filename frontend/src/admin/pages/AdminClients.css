@@ -1,0 +1,16 @@
+/* Page-specific rules only — shared page header, filters, table, status
+   badges, action buttons and pagination now live in
+   admin/styles/admin-shared.css so every admin list page stays consistent. */
+
+.client-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.client-logo-placeholder {
+  width: 38px;
+  height: 38px;
+  color: #cbd5e1;
+}
