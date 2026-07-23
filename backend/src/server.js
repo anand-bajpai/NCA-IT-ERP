@@ -50,7 +50,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-const allowedOrigins = (process.env.CLIENT_ORIGIN || "http://localhost:5173")
+const allowedOrigins = (
+  process.env.CLIENT_ORIGIN ||
+  "http://localhost:5173,https://nca-it-erp-eight.vercel.app"
+)
   .split(",")
   .map((o) => o.trim());
 
