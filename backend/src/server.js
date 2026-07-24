@@ -52,7 +52,7 @@ app.use(cookieParser());
 
 const allowedOrigins = (
   process.env.CLIENT_ORIGIN ||
-  "http://localhost:5173,https://nca-it-fxe7qgpbc-anand-bajpai1.vercel.app"
+  "http://localhost:5173,https://https://nca-it-8ty68bqz3-anand-bajpai1.vercel.app"
   
 )
   .split(",")
